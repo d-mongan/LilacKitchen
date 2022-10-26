@@ -25,13 +25,12 @@ public class MainActivity extends AppCompatActivity implements TabLayoutMediator
 
         viewPager2 = findViewById(R.id.viewPager2);
         tabLayout = findViewById(R.id.tabLayout);
-        new TabLayoutMediator(tabLayout, viewPager2, this).attach();
-        titles = new ArrayList<String>();
+        titles = new ArrayList<>();
         titles.add("Recipes");
         titles.add("POS");
         titles.add("Reports");
-
         setViewPagerAdapter();
+        new TabLayoutMediator(tabLayout, viewPager2, this).attach();
 
     }
 
