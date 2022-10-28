@@ -6,13 +6,16 @@ import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RecipesFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class RecipesFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -52,6 +55,9 @@ public class RecipesFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+            //initializations here
+
         }
     }
 
@@ -60,5 +66,15 @@ public class RecipesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_recipes, container, false);
+    }
+
+    public void onViewCreated(View view, Bundle savedInstanceState){
+        super.onViewCreated(view, savedInstanceState);
+        // initialise your views
+        Spinner spinnerFlavour = (Spinner) view.findViewById(R.id.spinnerFlavour);
+        ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(getActivity(), R.array.RecipeFlavours, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinnerFlavour.setAdapter(adapter);
+
     }
 }
