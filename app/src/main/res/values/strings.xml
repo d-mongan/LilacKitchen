@@ -8,6 +8,11 @@
         <item>Banana</item>
         <item>Coffee</item>
     </string-array>
-
+    <string name="Default0">0</string>
+    <string name="Cake">Cakes</string>
+    <string name="Cuppies">Cuppies</string>
+    <string name="fourIn">4in</string>
+    <string name="sixIn">6in</string>
+    <string name="sevenIn">7in</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

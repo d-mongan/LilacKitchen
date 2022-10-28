@@ -9,12 +9,219 @@
 
     <Spinner
         android:id="@+id/spinnerFlavour"
-        android:layout_width="212dp"
-        android:layout_height="38dp"
+        android:layout_width="176dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/cakeText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="202dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="44dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fourinch"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.205">
+
+        <Button
+            android:id="@+id/removeBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/custom_btn_remove"
+            android:backgroundTint="#C5BCBC"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/itemQuanEt"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="17dp"
+            android:minEms="1"
+            android:text="@string/Default0"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/custom_btn_add"
+            android:backgroundTint="#C5BCBC"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/cakeText"
+        android:layout_width="104dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/Cake"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133" />
+
+    <TextView
+        android:id="@+id/fourinch"
+        android:layout_width="106dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="90dp"
+        android:text="@string/fourIn"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.226" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="202dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="44dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sixinch"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/removeBtn2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/custom_btn_remove"
+            android:backgroundTint="#C5BCBC"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/itemQuanEt2"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="17dp"
+            android:minEms="1"
+            android:text="@string/Default0"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/addBtn2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/custom_btn_add"
+            android:backgroundTint="#C5BCBC"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/sixinch"
+        android:layout_width="106dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="90dp"
+        android:text="@string/sixIn"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.355" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="202dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="44dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/seveninch"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/removeBtn3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/custom_btn_remove"
+            android:backgroundTint="#C5BCBC"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/itemQuanEt3"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="17dp"
+            android:minEms="1"
+            android:text="@string/Default0"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/addBtn3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/custom_btn_add"
+            android:backgroundTint="#C5BCBC"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/seveninch"
+        android:layout_width="106dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="90dp"
+        android:text="@string/sevenIn"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayout3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
