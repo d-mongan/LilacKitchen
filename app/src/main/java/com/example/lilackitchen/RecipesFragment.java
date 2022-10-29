@@ -9,14 +9,17 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewDebug;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class RecipesFragment extends Fragment {
+public class RecipesFragment extends Fragment  {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +29,7 @@ public class RecipesFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
 
     public RecipesFragment() {
         // Required empty public constructor
@@ -58,6 +62,7 @@ public class RecipesFragment extends Fragment {
 
             //initializations here
 
+
         }
     }
 
@@ -71,10 +76,94 @@ public class RecipesFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
         // initialise your views
-        Spinner spinnerFlavour = (Spinner) view.findViewById(R.id.spinnerFlavour);
+        Spinner spinnerFlavour = view.findViewById(R.id.spinnerFlavour);
         ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(getActivity(), R.array.RecipeFlavours, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinnerFlavour.setAdapter(adapter);
+        Button addBtn4in = view.findViewById(R.id.addBtn);
+        Button addBtn6in = view.findViewById(R.id.addBtn2);
+        Button addBtn7in = view.findViewById(R.id.addBtn3);
+        Button addBtnCuppies = view.findViewById(R.id.addBtn4);
+        Button removeBtn4in = view.findViewById(R.id.removeBtn);
+        Button removeBtn6in = view.findViewById(R.id.removeBtn2);
+        Button removeBtn7in = view.findViewById(R.id.removeBtn3);
+        Button removeBtnCuppies = view.findViewById(R.id.removeBtn4);
+        TextView textView4in = view.findViewById(R.id.itemQuanEt);
+        TextView textView6in = view.findViewById(R.id.itemQuanEt2);
+        TextView textView7in = view.findViewById(R.id.itemQuanEt3);
+        TextView textViewCuppies = view.findViewById(R.id.itemQuanEt4);
 
+        //onClick logic
+        addBtn4in.setOnClickListener(v ->
+            {
+                // click handling code
+                int i = Integer.parseInt((String)textView4in.getText());
+                i = i+1;
+                textView4in.setText(Integer.toString(i));
+            });
+        addBtn6in.setOnClickListener(v ->
+        {
+            // click handling code
+            int i = Integer.parseInt((String)textView6in.getText());
+            i = i+1;
+            textView6in.setText(Integer.toString(i));
+        });
+        addBtn7in.setOnClickListener(v ->
+        {
+            // click handling code
+            int i = Integer.parseInt((String)textView7in.getText());
+            i = i+1;
+            textView7in.setText(Integer.toString(i));
+        });
+        addBtnCuppies.setOnClickListener(v ->
+        {
+            // click handling code
+            int i = Integer.parseInt((String)textViewCuppies.getText());
+            i = i+6;
+            textViewCuppies.setText(Integer.toString(i));
+        });
+
+        removeBtn4in.setOnClickListener(v ->
+        {
+            // click handling code
+            int i = Integer.parseInt((String)textView4in.getText());
+            if (i > 0) {
+                i = i - 1;
+            } else
+                {i = 0;}
+            textView4in.setText(Integer.toString(i));
+        });
+        removeBtn6in.setOnClickListener(v ->
+        {
+            // click handling code
+            int i = Integer.parseInt((String)textView6in.getText());
+            if (i > 0) {
+                i = i - 1;
+            } else
+            {i = 0;}
+            textView6in.setText(Integer.toString(i));
+        });
+        removeBtn7in.setOnClickListener(v ->
+        {
+            // click handling code
+            int i = Integer.parseInt((String)textView7in.getText());
+            if (i > 0) {
+                i = i - 1;
+            } else
+            {i = 0;}
+            textView7in.setText(Integer.toString(i));
+        });
+        removeBtnCuppies.setOnClickListener(v ->
+        {
+            // click handling code
+            int i = Integer.parseInt((String)textViewCuppies.getText());
+            if (i > 0) {
+                i = i - 6;
+            } else
+            {i = 0;}
+            textViewCuppies.setText(Integer.toString(i));
+        });
     }
+
+
 }

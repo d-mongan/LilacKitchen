@@ -14,5 +14,6 @@
     <string name="fourIn">4in</string>
     <string name="sixIn">6in</string>
     <string name="sevenIn">7in</string>
+    <string name="Create">Create Recipe</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
