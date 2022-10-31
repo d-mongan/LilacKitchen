@@ -15,5 +15,27 @@
     <string name="sixIn">6in</string>
     <string name="sevenIn">7in</string>
     <string name="Create">Create Recipe</string>
+    <string name="Flour">Flour</string>
+    <string name="CornFlour">Corn Flour</string>
+    <string name="BakingPowder">Baking Powder</string>
+    <string name="BakingSoda">Baking Soda</string>
+    <string name="CasterSugar">Caster Sugar</string>
+    <string name="BrownSugar">Brown Sugar</string>
+    <string name="Eggs">Eggs</string>
+    <string name="CanolaOil">Canola Oil</string>
+    <string name="DutchCocoa">Dutch Cocoa</string>
+    <string name="VanillaExtract">Vanilla Extract</string>
+    <string name="VanillaPaste">Vanilla Paste</string>
+    <string name="EggWhites">Egg Whites</string>
+    <string name="AlmondFlour">Almond Flour</string>
+    <string name="ButterMilk">Buttermilk</string>
+    <string name="Coffee">Coffee</string>
+    <string name="Butter">Butter</string>
+    <string name="Banana">Banana</string>
+    <string name="LemonZest">Lemon Zest</string>
+    <string name="LemonJuice">Lemon Juice</string>
+    <string name="Carrot">Carrot</string>
+    <string name="Walnuts">Walnuts</string>
+    <string name="Pineapple">Pineapple</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

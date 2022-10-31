@@ -1,5 +1,6 @@
 package com.example.lilackitchen;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -17,6 +18,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Objects;
 
 
 public class RecipesFragment extends Fragment  {
@@ -88,10 +91,12 @@ public class RecipesFragment extends Fragment  {
         Button removeBtn6in = view.findViewById(R.id.removeBtn2);
         Button removeBtn7in = view.findViewById(R.id.removeBtn3);
         Button removeBtnCuppies = view.findViewById(R.id.removeBtn4);
+        Button createRecipe = view.findViewById(R.id.btnCreate);
         TextView textView4in = view.findViewById(R.id.itemQuanEt);
         TextView textView6in = view.findViewById(R.id.itemQuanEt2);
         TextView textView7in = view.findViewById(R.id.itemQuanEt3);
         TextView textViewCuppies = view.findViewById(R.id.itemQuanEt4);
+
 
         //onClick logic
         addBtn4in.setOnClickListener(v ->
@@ -163,7 +168,25 @@ public class RecipesFragment extends Fragment  {
             {i = 0;}
             textViewCuppies.setText(Integer.toString(i));
         });
-    }
+        createRecipe.setOnClickListener(new View.OnClickListener() {
+            final int fourInch = Integer.parseInt((String)textView4in.getText());
+            final int sixInch = Integer.parseInt((String)textView6in.getText());
+            final int sevenInch = Integer.parseInt((String)textView7in.getText());
+            final int cuppies = Integer.parseInt((String)textViewCuppies.getText());
+            final String flavour = spinnerFlavour.getSelectedItem().toString();
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), RecipeActivity.class);
+                intent.putExtra("fourInch", fourInch);
+                intent.putExtra("sixInch", sixInch);
+                intent.putExtra("sevenInch", sevenInch);
+                intent.putExtra("cuppies", cuppies);
+                intent.putExtra("flavour", flavour);
+                startActivity(intent);
 
+            }
+        });
+
+    }
 
 }
