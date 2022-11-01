@@ -169,10 +169,10 @@ public class RecipesFragment extends Fragment  {
             textViewCuppies.setText(Integer.toString(i));
         });
         createRecipe.setOnClickListener(new View.OnClickListener() {
-            final int fourInch = Integer.parseInt((String)textView4in.getText());
-            final int sixInch = Integer.parseInt((String)textView6in.getText());
-            final int sevenInch = Integer.parseInt((String)textView7in.getText());
-            final int cuppies = Integer.parseInt((String)textViewCuppies.getText());
+            final int fourInch = Integer.parseInt(textView4in.getText().toString());
+            final int sixInch = Integer.parseInt(textView6in.getText().toString());
+            final int sevenInch = Integer.parseInt(textView7in.getText().toString());
+            final int cuppies = Integer.parseInt(textViewCuppies.getText().toString());
             final String flavour = spinnerFlavour.getSelectedItem().toString();
             @Override
             public void onClick(View v) {

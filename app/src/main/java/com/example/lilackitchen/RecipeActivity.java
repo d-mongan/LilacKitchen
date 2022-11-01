@@ -10,6 +10,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.util.Objects;
 
@@ -32,13 +33,14 @@ public class RecipeActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
+
         int fourInch = intent.getIntExtra("fourInch",0);
         int sixInch = intent.getIntExtra("sixInch",0);
         int sevenInch = intent.getIntExtra("sevenInch",0);
         int cuppies = intent.getIntExtra("cuppies",0);
         String flavour = intent.getStringExtra("flavour");
 
-        if (Objects.equals(flavour, "Vanilla")) {
+        /*if (Objects.equals(flavour, "Vanilla")) {
             createVanillaRecipe(fourInch, sixInch, sevenInch, cuppies, flavour);
         } else if (Objects.equals(flavour, "Chocolate")){
             createChocolateRecipe(fourInch, sixInch, sevenInch, cuppies, flavour);
@@ -50,9 +52,11 @@ public class RecipeActivity extends AppCompatActivity {
             createBananaRecipe(fourInch, sixInch, sevenInch, cuppies, flavour);
         } else if (Objects.equals(flavour, "Coffee")){
             createCoffeeRecipe(fourInch, sixInch, sevenInch, cuppies, flavour);
-        }
+        }*/
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(String.valueOf(fourInch));
     }
 
     private void createCoffeeRecipe(int fourInch, int sixInch, int sevenInch, int cuppies, String flavour) {
@@ -159,7 +163,13 @@ public class RecipeActivity extends AppCompatActivity {
             cakeTvanillaextract = cakeTvanillaextract + (sixvanillaextract * cuppies);
             cakeTvanillabeanpaste = cakeTvanillabeanpaste + (sixvanillapaste * cuppies);
         }
-
+        /* output values in formatted string to textview */
+        String output = null;
+        if(fourInch > 0){
+            output = output + "Four Inch " + flavour.toString() + " Cake x"+ Integer.toString(fourInch);
+        }
+        //TextView recipeTextView = findViewById(R.id.recipetextView);
+        //recipeTextView.setText(output);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
