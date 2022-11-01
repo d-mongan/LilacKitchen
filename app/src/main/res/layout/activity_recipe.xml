@@ -15,5 +15,5 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="18dp"
         android:layout_marginTop="32dp"
-        android:text="test" />
+        android:textSize="30dp"/>
 </RelativeLayout>

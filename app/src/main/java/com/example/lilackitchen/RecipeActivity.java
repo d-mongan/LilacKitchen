@@ -34,13 +34,13 @@ public class RecipeActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        int fourInch = intent.getIntExtra("fourInch",0);
-        int sixInch = intent.getIntExtra("sixInch",0);
-        int sevenInch = intent.getIntExtra("sevenInch",0);
-        int cuppies = intent.getIntExtra("cuppies",0);
+        int fourInch = intent.getIntExtra("fourInch",-1);
+        int sixInch = intent.getIntExtra("sixInch",-1);
+        int sevenInch = intent.getIntExtra("sevenInch",-1);
+        int cuppies = intent.getIntExtra("cuppies",-1);
         String flavour = intent.getStringExtra("flavour");
 
-        /*if (Objects.equals(flavour, "Vanilla")) {
+        if (Objects.equals(flavour, "Vanilla")) {
             createVanillaRecipe(fourInch, sixInch, sevenInch, cuppies, flavour);
         } else if (Objects.equals(flavour, "Chocolate")){
             createChocolateRecipe(fourInch, sixInch, sevenInch, cuppies, flavour);
@@ -52,11 +52,10 @@ public class RecipeActivity extends AppCompatActivity {
             createBananaRecipe(fourInch, sixInch, sevenInch, cuppies, flavour);
         } else if (Objects.equals(flavour, "Coffee")){
             createCoffeeRecipe(fourInch, sixInch, sevenInch, cuppies, flavour);
-        }*/
+        }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        TextView recipeTextView = findViewById(R.id.recipetextView);
-        recipeTextView.setText(String.valueOf(fourInch));
+
     }
 
     private void createCoffeeRecipe(int fourInch, int sixInch, int sevenInch, int cuppies, String flavour) {
@@ -151,25 +150,51 @@ public class RecipeActivity extends AppCompatActivity {
         int sixcanola = 10;
         double sixvanillaextract = 0.3;
         double sixvanillapaste = 0.2;
+        int cuppieMultiplier = cuppies/6;
         if (cuppies > 0){
-            cakeTflour = cakeTflour + (sixflour * cuppies);
-            cakeTcornflour = cakeTcornflour + (sixcornflour * cuppies);
-            cakeTcastersugar = cakeTcastersugar + (sixcastersugar * cuppies);
-            cakeTbakingpowder = cakeTbakingpowder + (sixbakingpowder * cuppies);
-            cakeTbutter = cakeTbutter + (sixbutter * cuppies);
-            cakeTeggs = cakeTeggs + (sixeggs * cuppies);
-            cakeTmilk = cakeTmilk + (sixmilk * cuppies);
-            cakeTcanola = cakeTcanola + (sixcanola * cuppies);
-            cakeTvanillaextract = cakeTvanillaextract + (sixvanillaextract * cuppies);
-            cakeTvanillabeanpaste = cakeTvanillabeanpaste + (sixvanillapaste * cuppies);
+            cakeTflour = cakeTflour + (sixflour * cuppieMultiplier);
+            cakeTcornflour = cakeTcornflour + (sixcornflour * cuppieMultiplier);
+            cakeTcastersugar = cakeTcastersugar + (sixcastersugar * cuppieMultiplier);
+            cakeTbakingpowder = cakeTbakingpowder + (sixbakingpowder * cuppieMultiplier);
+            cakeTbutter = cakeTbutter + (sixbutter * cuppieMultiplier);
+            cakeTeggs = cakeTeggs + (sixeggs * cuppieMultiplier);
+            cakeTmilk = cakeTmilk + (sixmilk * cuppieMultiplier);
+            cakeTcanola = cakeTcanola + (sixcanola * cuppieMultiplier);
+            cakeTvanillaextract = cakeTvanillaextract + (sixvanillaextract * cuppieMultiplier);
+            cakeTvanillabeanpaste = cakeTvanillabeanpaste + (sixvanillapaste * cuppieMultiplier);
         }
         /* output values in formatted string to textview */
-        String output = null;
+        String output = "";
         if(fourInch > 0){
-            output = output + "Four Inch " + flavour.toString() + " Cake x"+ Integer.toString(fourInch);
+            output = output + "Four Inch " + flavour.toString() + " Cake x"+ Integer.toString(fourInch) +"\n";
         }
-        //TextView recipeTextView = findViewById(R.id.recipetextView);
-        //recipeTextView.setText(output);
+        if(sixInch > 0){
+            output = output + "Six Inch " + flavour.toString() + " Cake x"+ Integer.toString(sixInch) +"\n";
+        }
+        if(sevenInch > 0){
+            output = output + "Seven Inch " + flavour.toString() + " Cake x"+ Integer.toString(sevenInch) +"\n";
+        }
+        if(cuppies > 0){
+            output = output + flavour.toString() + " Cupcakes x"+ Integer.toString(cuppies) +"\n";
+        }
+        if(fourInch > 0 || sixInch > 0 || sevenInch > 0){
+            output = output + "Oven Temp:170\u00B0C\n";
+        }
+        if (cuppies > 0 && fourInch == 0 && sixInch == 0 && sevenInch == 0){
+            output = output + "Oven Temp:160\u00B0C\n";
+        }
+        output = output + "\n"+Integer.toString(cakeTflour)+"g Flour\n";
+        output = output + Integer.toString(cakeTcornflour)+"g Cornflour\n";
+        output = output + Integer.toString(cakeTcastersugar)+"g Caster Sugar\n";
+        output = output + Integer.toString(cakeTbakingpowder) +"g Baking Powder\n";
+        output = output + Integer.toString(cakeTbutter) +"g Butter\n";
+        output = output + Integer.toString(cakeTeggs) + " Eggs\n";
+        output = output + Integer.toString(cakeTmilk) + "g Milk\n";
+        output = output + Integer.toString(cakeTcanola) + "g Canola Oil\n";
+        output = output + Double.toString(Math.round(cakeTvanillaextract * 100.0) / 100.0) + " tsp Vanilla Extract\n";
+        output = output + Double.toString(Math.round(cakeTvanillabeanpaste * 100.0) / 100.0) + " tsp Vanilla Paste\n";
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
