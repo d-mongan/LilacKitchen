@@ -123,11 +123,78 @@ public class RecipeActivity extends AppCompatActivity {
             cakeTbuttermilk = (int) (cakeTbuttermilk + ((fourinbuttermilk*1.5) * sixInch));
         }
         if (sevenInch > 0){
-            //todo seven inch
+            cakeTflour = cakeTflour + ((fourinflour*2) * sevenInch);
+            cakeTbrownsugar = cakeTbrownsugar + ((fourinbrownsugar*2) * sevenInch);
+            cakeTdutchcocoa = cakeTdutchcocoa + ((fourindutchcocoa*2) * sevenInch);
+            cakeTbakingsoda = cakeTbakingsoda + ((fourinbakingsoda*2) * sevenInch);
+            cakeTbutter = cakeTbutter + ((fourinbutter*2) * sevenInch);
+            cakeTcoffee = cakeTcoffee + ((fourincoffee*2) * sevenInch);
+            cakeTwarmwater = cakeTwarmwater + ((fourinwarmwater*2) * sevenInch);
+            cakeTeggs = cakeTeggs + ((fourineggs*2) * sevenInch);
+            cakeTcanola = cakeTcanola + ((fourincanola*2) * sevenInch);
+            cakeTvanillaextract = cakeTvanillaextract + ((fourinvanillaextract*2) * sevenInch);
+            cakeTbuttermilk = cakeTbuttermilk + ((fourinbuttermilk*2) * sevenInch);
         }
-        //todo cupcakes
+        //cupcakes
+        int sixflour = 183;
+        int sixbrownsugar = 300;
+        int sixdutchcocoa = 60;
+        int sixbakingsoda = 8;
+        int sixbutter = 125;
+        double sixcoffee = 0.5;
+        int sixwarmwater = 185;
+        int sixeggs = 2;
+        int sixcanola = 60;
+        double sixvanillaextract = 1;
+        int sixbuttermilk = 130;
+        int cuppiemultiplier = cuppies/6;
+        if(cuppies > 0){
+            cakeTflour = cakeTflour + (sixflour * cuppiemultiplier);
+            cakeTbrownsugar = cakeTbrownsugar + (sixbrownsugar * cuppiemultiplier);
+            cakeTdutchcocoa = cakeTdutchcocoa + (sixdutchcocoa * cuppiemultiplier);
+            cakeTbakingsoda = cakeTbakingsoda + (sixbakingsoda * cuppiemultiplier);
+            cakeTbutter = cakeTbutter + (sixbutter * cuppiemultiplier);
+            cakeTcoffee = cakeTcoffee + (sixcoffee * cuppiemultiplier);
+            cakeTwarmwater = cakeTwarmwater + (sixwarmwater * cuppiemultiplier);
+            cakeTeggs = cakeTeggs + (sixeggs * cuppiemultiplier);
+            cakeTcanola = cakeTcanola + (sixcanola * cuppiemultiplier);
+            cakeTvanillaextract = cakeTvanillaextract + (sixvanillaextract * cuppiemultiplier);
+            cakeTbuttermilk = cakeTbuttermilk + (sixbuttermilk * cuppiemultiplier);
+        }
+        //output to string
+        String output = "";
+        if(fourInch > 0){
+            output = output + "Four Inch " + flavour.toString() + " Cake x"+ Integer.toString(fourInch) +"\n";
+        }
+        if(sixInch > 0){
+            output = output + "Six Inch " + flavour.toString() + " Cake x"+ Integer.toString(sixInch) +"\n";
+        }
+        if(sevenInch > 0){
+            output = output + "Seven Inch " + flavour.toString() + " Cake x"+ Integer.toString(sevenInch) +"\n";
+        }
+        if(cuppies > 0){
+            output = output + flavour.toString() + " Cupcakes x"+ Integer.toString(cuppies) +"\n";
+        }
+        if(fourInch > 0 || sixInch > 0 || sevenInch > 0){
+            output = output + "Oven Temp:170\u00B0C\n";
+        }
+        if (cuppies > 0 && fourInch == 0 && sixInch == 0 && sevenInch == 0){
+            output = output + "Oven Temp:160\u00B0C\n";
+        }
+        output = output + "\n"+Integer.toString(cakeTflour)+"g Flour\n";
+        output = output + Integer.toString(cakeTbrownsugar)+"g Brown Sugar\n";
+        output = output + Integer.toString(cakeTdutchcocoa)+"g Dutch Cocoa\n";
+        output = output + Integer.toString(cakeTbakingsoda)+"g Baking Soda\n";
+        output = output + Integer.toString(cakeTbutter)+"g Butter\n";
+        output = output + Double.toString(Math.round(cakeTcoffee * 100.0) / 100.0) +" tsp Coffee\n";
+        output = output + Integer.toString(cakeTwarmwater)+"g Warm Water\n";
+        output = output + Integer.toString(cakeTeggs)+" Eggs\n";
+        output = output + Integer.toString(cakeTcanola)+"g Canola Oil\n";
+        output = output + Double.toString(Math.round(cakeTvanillaextract * 100.0) / 100.0) +" tsp Vanilla Extract\n";
+        output = output + Integer.toString(cakeTbuttermilk)+"g Buttermilk\n";
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
 
-        //todo output to string
     }
 
     public void createVanillaRecipe (int fourInch, int sixInch, int sevenInch, int cuppies, String flavour) {
