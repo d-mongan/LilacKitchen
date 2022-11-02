@@ -73,9 +73,61 @@ public class RecipeActivity extends AppCompatActivity {
     private void createChocolateRecipe(int fourInch, int sixInch, int sevenInch, int cuppies, String flavour) {
         //six inch is 1.5x 4 inch. 7 inch is 2 times 4 inch
         int fourinflour = 183;
-        int sixinflour = 274;
-        int seveninflour = 365;
+        int fourinbrownsugar = 300;
+        int fourindutchcocoa = 60;
+        int fourinbakingsoda = 8;
+        int fourinbutter = 125;
+        double fourincoffee = 0.5;
+        int fourinwarmwater = 185;
+        int fourineggs = 2;
+        int fourincanola = 60;
+        double fourinvanillaextract = 1;
+        int fourinbuttermilk = 130;
 
+        int cakeTflour=0;
+        int cakeTbrownsugar=0;
+        int cakeTdutchcocoa=0;
+        int cakeTbakingsoda=0;
+        int cakeTbutter=0;
+        double cakeTcoffee=0.0;
+        int cakeTwarmwater=0;
+        int cakeTeggs=0;
+        int cakeTcanola=0;
+        double cakeTvanillaextract=0.0;
+        int cakeTbuttermilk=0;
+        if (fourInch > 0 ){
+            cakeTflour = cakeTflour + (fourinflour * fourInch);
+            cakeTbrownsugar = cakeTbrownsugar + (fourinbrownsugar * fourInch);
+            cakeTdutchcocoa = cakeTdutchcocoa + (fourindutchcocoa * fourInch);
+            cakeTbakingsoda = cakeTbakingsoda + (fourinbakingsoda * fourInch);
+            cakeTbutter = cakeTbutter + (fourinbutter * fourInch);
+            cakeTcoffee = cakeTcoffee + (fourincoffee * fourInch);
+            cakeTwarmwater = cakeTwarmwater + (fourinwarmwater * fourInch);
+            cakeTeggs = cakeTeggs + (fourineggs * fourInch);
+            cakeTcanola = cakeTcanola + (fourincanola * fourInch);
+            cakeTvanillaextract = cakeTvanillaextract + (fourinvanillaextract * fourInch);
+            cakeTbuttermilk = cakeTbuttermilk + (fourinbuttermilk * fourInch);
+
+        }
+        if (sixInch > 0){
+            cakeTflour = (int) (cakeTflour + ((fourinflour*1.5) * sixInch));
+            cakeTbrownsugar = (int) (cakeTbrownsugar + ((fourinbrownsugar*1.5) * sixInch));
+            cakeTdutchcocoa = (int) (cakeTdutchcocoa + ((fourindutchcocoa*1.5) * sixInch));
+            cakeTbakingsoda = (int) (cakeTbakingsoda + ((fourinbakingsoda*1.5) * sixInch));
+            cakeTbutter = (int) (cakeTbutter + ((fourinbutter*1.5) * sixInch));
+            cakeTcoffee = cakeTcoffee + ((fourincoffee*1.5) * sixInch);
+            cakeTwarmwater = (int) (cakeTwarmwater + ((fourinwarmwater*1.5) * sixInch));
+            cakeTeggs = (int) (cakeTeggs + ((fourineggs*1.5) * sixInch));
+            cakeTcanola = (int) (cakeTcanola + ((fourincanola*1.5) * sixInch));
+            cakeTvanillaextract = cakeTvanillaextract + ((fourinvanillaextract*1.5) * sixInch);
+            cakeTbuttermilk = (int) (cakeTbuttermilk + ((fourinbuttermilk*1.5) * sixInch));
+        }
+        if (sevenInch > 0){
+            //todo seven inch
+        }
+        //todo cupcakes
+
+        //todo output to string
     }
 
     public void createVanillaRecipe (int fourInch, int sixInch, int sevenInch, int cuppies, String flavour) {
