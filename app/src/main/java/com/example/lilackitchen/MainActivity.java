@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements TabLayoutMediator
         tabLayout = findViewById(R.id.tabLayout);
         titles = new ArrayList<>();
         titles.add("Recipes");
-        titles.add("POS");
+        titles.add("Notes");
         titles.add("Reports");
         setViewPagerAdapter();
         new TabLayoutMediator(tabLayout, viewPager2, this).attach();
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements TabLayoutMediator
                 ViewPager2Adapter(this);
         ArrayList<Fragment> fragmentList = new ArrayList<>(); //creates an ArrayList of Fragments
         fragmentList.add(new RecipesFragment());
-        fragmentList.add(new POSFragment());
+        fragmentList.add(new NotesFragment());
         fragmentList.add(new ReportsFragment());
         viewPager2Adapter.setData(fragmentList); //sets the data for the adapter
         viewPager2.setAdapter(viewPager2Adapter);
