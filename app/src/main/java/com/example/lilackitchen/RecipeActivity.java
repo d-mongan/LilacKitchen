@@ -91,7 +91,7 @@ public class RecipeActivity extends AppCompatActivity {
         int cakeTbutter=0;
         double cakeTcoffee=0.0;
         int cakeTwarmwater=0;
-        int cakeTeggs=0;
+        double cakeTeggs=0;
         int cakeTcanola=0;
         double cakeTvanillaextract=0.0;
         int cakeTbuttermilk=0;
@@ -136,17 +136,17 @@ public class RecipeActivity extends AppCompatActivity {
             cakeTbuttermilk = cakeTbuttermilk + ((fourinbuttermilk*2) * sevenInch);
         }
         //cupcakes
-        int sixflour = 183;
-        int sixbrownsugar = 300;
-        int sixdutchcocoa = 60;
-        int sixbakingsoda = 8;
-        int sixbutter = 125;
-        double sixcoffee = 0.5;
-        int sixwarmwater = 185;
-        int sixeggs = 2;
-        int sixcanola = 60;
-        double sixvanillaextract = 1;
-        int sixbuttermilk = 130;
+        int sixflour = 73;
+        int sixbrownsugar = 120;
+        int sixdutchcocoa = 24;
+        int sixbakingsoda = 3;
+        int sixbutter = 50;
+        double sixcoffee = 0.2;
+        int sixwarmwater = 74;
+        double sixeggs = 0.8;
+        int sixcanola = 24;
+        double sixvanillaextract = 0.4;
+        int sixbuttermilk = 52;
         int cuppiemultiplier = cuppies/6;
         if(cuppies > 0){
             cakeTflour = cakeTflour + (sixflour * cuppiemultiplier);
@@ -188,7 +188,7 @@ public class RecipeActivity extends AppCompatActivity {
         output = output + Integer.toString(cakeTbutter)+"g Butter\n";
         output = output + Double.toString(Math.round(cakeTcoffee * 100.0) / 100.0) +" tsp Coffee\n";
         output = output + Integer.toString(cakeTwarmwater)+"g Warm Water\n";
-        output = output + Integer.toString(cakeTeggs)+" Eggs\n";
+        output = output + Double.toString(Math.round(cakeTeggs* 100.0) / 100.0)+" Eggs\n";
         output = output + Integer.toString(cakeTcanola)+"g Canola Oil\n";
         output = output + Double.toString(Math.round(cakeTvanillaextract * 100.0) / 100.0) +" tsp Vanilla Extract\n";
         output = output + Integer.toString(cakeTbuttermilk)+"g Buttermilk\n";
