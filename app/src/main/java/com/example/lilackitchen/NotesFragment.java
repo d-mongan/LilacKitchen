@@ -101,6 +101,7 @@ public class NotesFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
+                MainActivity.fragmentPosition = MainActivity.viewPager2.getCurrentItem();
                 Intent intent = new Intent(view.getContext(), NotesActivity.class);
                 intent.putExtra("noteID", position);            //to tell us which row of listView was tapped
                 startActivity(intent);
@@ -111,12 +112,9 @@ public class NotesFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-
+                    MainActivity.fragmentPosition = MainActivity.viewPager2.getCurrentItem();
                     Intent intent = new Intent(v.getContext(), NotesActivity.class);
                     startActivity(intent);
-
-
-
             }
         });
         //long press list items to delete

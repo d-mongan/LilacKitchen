@@ -172,6 +172,7 @@ public class RecipesFragment extends Fragment  {
 
             @Override
             public void onClick(View v) {
+                MainActivity.fragmentPosition = MainActivity.viewPager2.getCurrentItem();
                 final int fourInch = Integer.parseInt(textView4in.getText().toString());
                 final int sixInch = Integer.parseInt(textView6in.getText().toString());
                 final int sevenInch = Integer.parseInt(textView7in.getText().toString());

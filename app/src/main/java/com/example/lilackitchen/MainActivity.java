@@ -17,9 +17,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements TabLayoutMediator.TabConfigurationStrategy {
 
-    ViewPager2 viewPager2;
+    static ViewPager2 viewPager2;
     TabLayout tabLayout;
     ArrayList<String> titles;
+    static int fragmentPosition = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,5 +65,11 @@ public class MainActivity extends AppCompatActivity implements TabLayoutMediator
     @Override
     public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
         tab.setText(titles.get(position));
+    }
+
+    @Override
+    protected void onResume() {
+        viewPager2.setCurrentItem(fragmentPosition);
+        super.onResume();
     }
 }

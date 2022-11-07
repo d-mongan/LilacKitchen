@@ -15,7 +15,7 @@
         <activity
             android:name=".NotesActivity"
             android:exported="false"
-            android:parentActivityName=".NotesFragment">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
