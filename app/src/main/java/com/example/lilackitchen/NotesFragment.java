@@ -1,7 +1,9 @@
 package com.example.lilackitchen;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -16,6 +18,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -79,9 +82,19 @@ public class NotesFragment extends Fragment {
         // initialise your views
         ListView listView = view.findViewById(R.id.listViewNotes);
         Button addNoteBtn = view.findViewById(R.id.addNote);
-        notes.add("Example Note");
+        //get saved notes
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("notes", Context.MODE_PRIVATE);
+        HashSet<String> set = (HashSet<String>)sharedPreferences.getStringSet("notes", null);
+        //add saved notes if any, otherwise start with example note
+        if (set == null) {
+            notes.add("Example Note");
+        } else {
+            notes = new ArrayList<>(set);
+        }
+        //create array adapter and link it listview
         arrayAdapter = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_list_item_1, notes);
         listView.setAdapter(arrayAdapter);
+
 
         //clicking list items to edit
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -121,6 +134,12 @@ public class NotesFragment extends Fragment {
                             {
                                 notes.remove(position);
                                 arrayAdapter.notifyDataSetChanged();
+                                //save array externally
+                                //save changes externally
+                                SharedPreferences sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("notes", Context.MODE_PRIVATE);
+                                HashSet<String> set = new HashSet<>(NotesFragment.notes);
+                                sharedPreferences.edit().putStringSet("notes", set).apply();
+
                             }
                         })
 

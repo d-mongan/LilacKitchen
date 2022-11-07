@@ -1,12 +1,21 @@
 package com.example.lilackitchen;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.widget.EditText;
+
+import java.util.HashSet;
 
 public class NotesActivity extends AppCompatActivity {
     int noteID;
@@ -15,6 +24,16 @@ public class NotesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
 
+        // Define ActionBar object
+        ActionBar actionBar;
+        actionBar = getSupportActionBar();
+        // Define ColorDrawable object and parse color
+        // using parseColor method
+        // with color hash code as its parameter
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#FFFFFF"));
+        // Set BackgroundDrawable
+        actionBar.setBackgroundDrawable(colorDrawable);
 
         EditText editText = (EditText)findViewById(R.id.editTextTextMultiLine);
         Intent intent = getIntent();
@@ -44,6 +63,10 @@ public class NotesActivity extends AppCompatActivity {
             {
                 NotesFragment.notes.set(noteID, String.valueOf(s));
                 NotesFragment.arrayAdapter.notifyDataSetChanged();
+                //save changes externally
+                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("notes", Context.MODE_PRIVATE);
+                HashSet<String> set = new HashSet<>(NotesFragment.notes);
+                sharedPreferences.edit().putStringSet("notes", set).apply();
             }
 
             @Override
@@ -52,8 +75,20 @@ public class NotesActivity extends AppCompatActivity {
 
             }
         });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
 
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
 }

@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements TabLayoutMediator
         fragmentList.add(new ReportsFragment());
         viewPager2Adapter.setData(fragmentList); //sets the data for the adapter
         viewPager2.setAdapter(viewPager2Adapter);
+        viewPager2.setOffscreenPageLimit(3);
 
     }
 
