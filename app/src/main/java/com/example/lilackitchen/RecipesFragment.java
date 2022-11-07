@@ -80,8 +80,10 @@ public class RecipesFragment extends Fragment  {
         super.onViewCreated(view, savedInstanceState);
         // initialise your views
         Spinner spinnerFlavour = view.findViewById(R.id.spinnerFlavour);
-        ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(getActivity(), R.array.RecipeFlavours, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        //ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(getActivity(), R.array.RecipeFlavours, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(getActivity(), R.array.RecipeFlavours, R.layout.spinner_style);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinnerFlavour.setAdapter(adapter);
         Button addBtn4in = view.findViewById(R.id.addBtn);
         Button addBtn6in = view.findViewById(R.id.addBtn2);

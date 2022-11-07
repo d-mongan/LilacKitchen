@@ -22,5 +22,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="13dp"
         android:layout_marginTop="6dp"
-        android:text="@string/addnote" />
+        android:text="@string/addnote"
+        android:textColor="@color/text"
+        android:backgroundTint="@color/purple_200"/>
 </RelativeLayout>
