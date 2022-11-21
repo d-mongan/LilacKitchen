@@ -216,8 +216,33 @@ public class RecipeActivity extends AppCompatActivity {
         //output to string
         String output = "";
         output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
+        output = output + "\n" + Integer.toString(lemonJuice)+"g Lemon Juice\n";
+        output = output + Integer.toString(lemonZest)+"Tbsp Lemon Zest\n";
+        output = output + Integer.toString(butter)+"g Butter\n";
+        output = output + Integer.toString(eggYolks)+" Egg Yolks\n";
+        output = output + Integer.toString(wholeEggs)+" Whole Eggs\n";
+        output = output + Integer.toString(casterSugar)+"g Caster Sugar\n\n";
+        output = output + "Blend all ingredients together and heat on low until large, slow bubbles form.";
+
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
     }
     private void createCaramelRecipe(int batchNumber, String flavour) {
+        int casterSugar = 225 * batchNumber;
+        int cream = 120 * batchNumber;
+        int butter = 90 * batchNumber;
+        int salt = 2 * batchNumber;
+
+        //output to string
+        String output = "";
+        output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
+        output = output + "\n" + Integer.toString(casterSugar)+"g Caster Sugar\n";
+        output = output + Integer.toString(cream)+"g Cream\n";
+        output = output + Integer.toString(butter)+"g Butter\n\n";
+        output = output + "Add " + Integer.toString(salt)+"tsp Salt for Salted Caramel.";
+
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
     }
 
     private void createCoffeeRecipe(int fourInch, int sixInch, int sevenInch, int cuppies, String flavour) {
