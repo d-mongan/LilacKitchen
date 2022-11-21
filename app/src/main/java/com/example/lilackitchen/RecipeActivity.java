@@ -80,13 +80,18 @@ public class RecipeActivity extends AppCompatActivity {
         int eggWhites = 200*batchNumber;
         int casterSugar = 250*batchNumber;
         int butter = 425*batchNumber;
+        int vanillaExtract = 1*batchNumber;
+        double vanillaBeanPaste = 0.5*batchNumber;
 
         //output to string
         String output = "";
         output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
         output = output + "\n"+Integer.toString(eggWhites)+"g Egg Whites\n";
-        output = output + "\n"+Integer.toString(casterSugar)+"g Caster Sugar\n";
-        output = output + "\n"+Integer.toString(butter)+"g Butter\n";
+        output = output + Integer.toString(casterSugar)+"g Caster Sugar\n";
+        output = output + Integer.toString(butter)+"g Butter\n";
+        output = output + Integer.toString(vanillaExtract)+"tsp Vanilla Extract\n";
+        output = output + Double.toString(Math.round(vanillaBeanPaste * 100.0) / 100.0) +" tsp Vanilla Paste\n";
+
 
         TextView recipeTextView = findViewById(R.id.recipetextView);
         recipeTextView.setText(output);
@@ -145,12 +150,72 @@ public class RecipeActivity extends AppCompatActivity {
         recipeTextView.setText(output);
     }
     private void createMacaronsRecipe(int batchNumber, String flavour) {
+        int almondMeal = 225*batchNumber;
+        int icingSugar = 225*batchNumber;
+        int casterSugar = 225*batchNumber;
+        int water = 60*batchNumber;
+        int eggWhitesD = 83*batchNumber;
+        int eggWhitesE = 83*batchNumber;
+
+        //output to string
+        String output = "";
+        output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
+        output = output + "125\u00B0C Middle Rack\n18 Mins\n";
+        output = output + "\nDarren's Mixture:\n";
+        output = output + Integer.toString(almondMeal)+"g Almond Meal\n";
+        output = output + Integer.toString(icingSugar)+"g Icing Sugar\n";
+        output = output + "Speed 4, 6 Secs\n";
+        output = output + Integer.toString(eggWhitesD)+"g Egg Whites\n";
+        output = output + "\nEmily's Mixture:\n";
+        output = output + Integer.toString(casterSugar)+"g Caster Sugar\n";
+        output = output + Integer.toString(water)+ "g Water\n";
+        output = output + Integer.toString(eggWhitesE)+ "g Egg Whites";
+
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
+
+
     }
     private void createChocolateGanacheRecipe(int batchNumber, String flavour) {
+        int cream = 100 * batchNumber;
+        int chocolate = 200 * batchNumber;
+
+        //output to string
+        String output = "";
+        output = output + flavour + " 1:2 Ratio \n" + Integer.toString(batchNumber) + " Batches\n";
+        output = output + "\n" + Integer.toString(cream) + "g Cream\n";
+        output = output + Integer.toString(chocolate) + "g Chocolate\n";
+
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
     }
     private void createBerryCompoteRecipe(int batchNumber, String flavour) {
+        int frozenBerries = 280 * batchNumber;
+        int casterSugar = 100 * batchNumber;
+        int lemonJuice = 1 * batchNumber;
+
+        //output to string
+        String output = "";
+        output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
+        output = output + "\n" + Integer.toString(frozenBerries) + "g Frozen Fruit\n";
+        output = output + Integer.toString(casterSugar) + "g Caster Sugar\n";
+        output = output + Integer.toString(lemonJuice) + " Squeezes of Lemon Juice\n";
+
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
+
     }
     private void createLemonCurdRecipe(int batchNumber, String flavour) {
+        int lemonJuice = 160*batchNumber;
+        int lemonZest = 1 * batchNumber;
+        int butter = 85 * batchNumber;
+        int eggYolks = 2*batchNumber;
+        int wholeEggs = 2*batchNumber;
+        int casterSugar = 220*batchNumber;
+
+        //output to string
+        String output = "";
+        output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
     }
     private void createCaramelRecipe(int batchNumber, String flavour) {
     }
