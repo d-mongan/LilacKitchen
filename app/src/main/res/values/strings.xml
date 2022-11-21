@@ -8,6 +8,16 @@
         <item>Banana</item>
         <item>Coffee</item>
     </string-array>
+    <string-array name="Recipes">
+        <item>ButterCream</item>
+        <item>Cookie Pies</item>
+        <item>Macarons</item>
+        <item>Lemon Curd</item>
+        <item>Chocolate Ganache</item>
+        <item>Berry Compote</item>
+        <item>Caramel</item>
+        <item>Custard</item>
+    </string-array>
     <string name="Default0">0</string>
     <string name="Cake">Cakes</string>
     <string name="Cuppies">Cuppies</string>
@@ -39,4 +49,6 @@
     <string name="Pineapple">Pineapple</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="addnote">Add Note</string>
+    <string name="Recipe">Recipe:</string>
+    <string name="Batch">Batches:</string>
 </resources>

@@ -38,6 +38,7 @@ public class RecipeActivity extends AppCompatActivity {
         int sixInch = intent.getIntExtra("sixInch",-1);
         int sevenInch = intent.getIntExtra("sevenInch",-1);
         int cuppies = intent.getIntExtra("cuppies",-1);
+        int batchNumber = intent.getIntExtra("batchNumber",-1);
         String flavour = intent.getStringExtra("flavour");
 
         if (Objects.equals(flavour, "Vanilla")) {
@@ -52,10 +53,106 @@ public class RecipeActivity extends AppCompatActivity {
             createBananaRecipe(fourInch, sixInch, sevenInch, cuppies, flavour);
         } else if (Objects.equals(flavour, "Coffee")){
             createCoffeeRecipe(fourInch, sixInch, sevenInch, cuppies, flavour);
+        } else if (Objects.equals(flavour, "ButterCream")){
+            createButterCreamRecipe(batchNumber, flavour);
+        }else if (Objects.equals(flavour, "Macarons")){
+            createMacaronsRecipe(batchNumber, flavour);
+        }else if (Objects.equals(flavour, "Lemon Curd")){
+            createLemonCurdRecipe(batchNumber, flavour);
+        }else if (Objects.equals(flavour, "Chocolate Ganache")){
+            createChocolateGanacheRecipe(batchNumber, flavour);
+        }else if (Objects.equals(flavour, "Berry Compote")){
+            createBerryCompoteRecipe(batchNumber, flavour);
+        }else if (Objects.equals(flavour, "Caramel")){
+            createCaramelRecipe(batchNumber, flavour);
+        }else if (Objects.equals(flavour, "Custard")){
+            createCustardRecipe(batchNumber, flavour);
+        }else if (Objects.equals(flavour, "Cookie Pies")){
+            createCookiePiesRecipe(batchNumber, flavour);
         }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+    }
+
+
+    private void createButterCreamRecipe(int batchNumber, String flavour) {
+        int eggWhites = 200*batchNumber;
+        int casterSugar = 250*batchNumber;
+        int butter = 425*batchNumber;
+
+        //output to string
+        String output = "";
+        output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
+        output = output + "\n"+Integer.toString(eggWhites)+"g Egg Whites\n";
+        output = output + "\n"+Integer.toString(casterSugar)+"g Caster Sugar\n";
+        output = output + "\n"+Integer.toString(butter)+"g Butter\n";
+
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
+
+    }
+    private void createCookiePiesRecipe(int batchNumber, String flavour) {
+        int numberOfPies = 10*batchNumber;
+        int casterSugar = 100*batchNumber;
+        int brownSugar = 100*batchNumber;
+        int butter = 150*batchNumber;
+        int eggs = 1*batchNumber;
+        double vanillaExtract = 0.25*batchNumber;
+        double bakingSoda = 0.5*batchNumber;
+        double bakingPowder = 0.5*batchNumber;
+        double salt = 0.5*batchNumber;
+
+        //output to string
+        String output = "";
+        output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
+        output = output + "170\u00B0C Bottom Heat\n17 Mins\nRed rolling pin\nOrange/pink cutters\n";
+        output = output + "Makes " + Integer.toString(numberOfPies) + " Cookie Pies\n";
+
+        output = output + "\n"+Integer.toString(casterSugar)+"g Caster Sugar\n";
+        output = output + Integer.toString(brownSugar)+"g Brown Sugar\n";
+        output = output + Integer.toString(butter)+"g Butter\n";
+        output = output + Integer.toString(eggs)+" Eggs\n";
+        output = output + Double.toString(Math.round(vanillaExtract * 100.0) / 100.0) +" tsp Vanilla Extract\n";
+        output = output + Double.toString(Math.round(bakingSoda * 100.0) / 100.0) +" tsp Baking Soda\n";
+        output = output + Double.toString(Math.round(bakingPowder * 100.0) / 100.0) +" tsp Baking Powder\n";
+        output = output + Double.toString(Math.round(salt * 100.0) / 100.0) +" tsp Salt\n";
+
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
+    }
+    private void createCustardRecipe(int batchNumber, String flavour) {
+        int milk = 450*batchNumber;
+        double vanillaBeanPaste= 0.5*batchNumber;
+        int casterSugar = 280*batchNumber;
+        int cornFlour = 42*batchNumber;
+        int wholeEggs = 2 * batchNumber;
+        int eggYolks = 2 * batchNumber;
+
+        //output to string
+        String output = "";
+        output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
+        output = output + "\n"+Integer.toString(milk)+"g Milk\n";
+        output = output + Double.toString(Math.round(vanillaBeanPaste * 100.0) / 100.0) +" tsp Vanilla Paste\n";
+        output = output + Integer.toString(casterSugar)+"g Caster Sugar\n";
+        output = output + Integer.toString(cornFlour)+"g Corn Flour\n";
+        output = output + Integer.toString(wholeEggs)+" Whole Eggs\n";
+        output = output + Integer.toString(eggYolks)+" Egg Yolks\n";
+        output = output + "\nSimmer milk and vanilla.\nWhisk together remaining ingredients.\nPour 1/4 of milk mixture in to egg mixture.\n";
+        output = output + "While whisking, add egg mixture slowly to simmering milk mixture\nContinue whisking until it thickens.";
+
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
+    }
+    private void createMacaronsRecipe(int batchNumber, String flavour) {
+    }
+    private void createChocolateGanacheRecipe(int batchNumber, String flavour) {
+    }
+    private void createBerryCompoteRecipe(int batchNumber, String flavour) {
+    }
+    private void createLemonCurdRecipe(int batchNumber, String flavour) {
+    }
+    private void createCaramelRecipe(int batchNumber, String flavour) {
     }
 
     private void createCoffeeRecipe(int fourInch, int sixInch, int sevenInch, int cuppies, String flavour) {

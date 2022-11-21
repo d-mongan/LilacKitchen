@@ -1,14 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OtherRecipesFragment">
+    tools:context=".RecipesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <Spinner
+        android:id="@+id/spinnerFlavour"
+        android:layout_width="206dp"
+        android:layout_height="53dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/purple_200"
+        android:spinnerMode="dropdown"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/itemQuanEt"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="221dp"
+        android:layout_marginTop="243dp"
+        android:minEms="1"
+        android:text="@string/Default0"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/removeBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="236dp"
+        android:layout_marginEnd="193dp"
+        android:background="@drawable/custom_btn_remove"
+        android:backgroundTint="@color/purple_200"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="331dp"
+        android:layout_marginTop="236dp"
+        android:background="@drawable/custom_btn_add"
+        android:backgroundTint="@color/purple_200"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/cakeText"
+        android:layout_width="104dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="97dp"
+        android:text="@string/Recipe"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/BatchText"
+        android:layout_width="104dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="238dp"
+        android:text="@string/Batch"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnCreate"
+        android:layout_width="178dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="381dp"
+        android:backgroundTint="@color/purple_200"
+        android:text="@string/Create"
+        android:textColor="@color/text" />
+
+</RelativeLayout>

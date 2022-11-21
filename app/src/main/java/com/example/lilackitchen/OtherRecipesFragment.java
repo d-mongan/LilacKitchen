@@ -1,5 +1,6 @@
 package com.example.lilackitchen;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,4 +66,56 @@ public class OtherRecipesFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_other_recipes, container, false);
     }
+
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        // initialise your views
+        Spinner spinnerFlavour = view.findViewById(R.id.spinnerFlavour);
+        //ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(getActivity(), R.array.RecipeFlavours, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.Recipes, R.layout.spinner_style);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        spinnerFlavour.setAdapter(adapter);
+        Button addBtn = view.findViewById(R.id.addBtn);
+        Button removeBtn = view.findViewById(R.id.removeBtn);
+        Button createRecipe = view.findViewById(R.id.btnCreate);
+        TextView textView = view.findViewById(R.id.itemQuanEt);
+
+        //onClick logic
+        addBtn.setOnClickListener(v ->
+        {
+            // click handling code
+            int i = Integer.parseInt((String)textView.getText());
+            i = i+1;
+            textView.setText(Integer.toString(i));
+        });
+
+        removeBtn.setOnClickListener(v ->
+        {
+            // click handling code
+            int i = Integer.parseInt((String)textView.getText());
+            if (i > 0) {
+                i = i - 1;
+            } else
+            {i = 0;}
+            textView.setText(Integer.toString(i));
+        });
+
+        createRecipe.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentPosition = MainActivity.viewPager2.getCurrentItem();
+                final int batchNumber = Integer.parseInt(textView.getText().toString());
+                final String flavour = spinnerFlavour.getSelectedItem().toString();
+                Intent intent = new Intent(v.getContext(), RecipeActivity.class);
+                intent.putExtra("batchNumber", batchNumber);
+                intent.putExtra("flavour", flavour);
+                startActivity(intent);
+
+            }
+        });
+
+    }
+
 }
