@@ -453,7 +453,7 @@ public class RecipeActivity extends AppCompatActivity {
         int sixbutter = 57;
         int sixeggs = 1;
         int sixmilk = 74;
-        int sixcanola = 10;
+        int sixcanola = 20;
         double sixvanillaextract = 0.3;
         double sixvanillapaste = 0.2;
         int cuppieMultiplier = cuppies/6;
