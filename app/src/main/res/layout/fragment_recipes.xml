@@ -165,13 +165,13 @@
         android:layout_width="106dp"
         android:layout_height="37dp"
         android:layout_marginStart="90dp"
-        android:layout_marginTop="352dp"
+        android:layout_marginTop="44dp"
         android:text="@string/sixIn"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/relativeLayout2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/fourinch" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout3"
@@ -228,13 +228,13 @@
         android:layout_width="106dp"
         android:layout_height="37dp"
         android:layout_marginStart="90dp"
-        android:layout_marginTop="444dp"
+        android:layout_marginTop="36dp"
         android:text="@string/sevenIn"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/relativeLayout3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/sixinch" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout4"
