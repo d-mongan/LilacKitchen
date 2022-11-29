@@ -69,6 +69,8 @@ public class RecipeActivity extends AppCompatActivity {
             createCustardRecipe(batchNumber, flavour);
         }else if (Objects.equals(flavour, "Cookie Pies")){
             createCookiePiesRecipe(batchNumber, flavour);
+        }else if (Objects.equals(flavour, "Sugar Cookies")) {
+            createSugarCookieRecipe(batchNumber, flavour);
         }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -92,6 +94,33 @@ public class RecipeActivity extends AppCompatActivity {
         output = output + Integer.toString(vanillaExtract)+"tsp Vanilla Extract\n";
         output = output + Double.toString(Math.round(vanillaBeanPaste * 100.0) / 100.0) +" tsp Vanilla Paste\n";
 
+
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
+
+    }
+    private void createSugarCookieRecipe(int batchNumber, String flavour) {
+        int numOfCookies = 24*batchNumber;
+        int butter = 200*batchNumber;
+        int casterSugar = 180*batchNumber;
+        int golderSyrup = 40*batchNumber;
+        int eggs = 1*batchNumber;
+        int flour = 400*batchNumber;
+        double salt = 0.5*batchNumber;
+        double bakingPowder=0.5*batchNumber;
+
+        String output = "";
+        output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
+        output = output + "160\u00B0C Paddle Attachment\n6 Mins then flip\nRed rolling pin\nOrange cutter\n";
+        output = output + "Makes " + Integer.toString(numOfCookies) + " Cookies\n";
+
+        output = output + "\n"+Integer.toString(butter)+"g Butter\n";
+        output = output + Integer.toString(casterSugar)+"g Caster Sugar\n";
+        output = output + Integer.toString(golderSyrup)+"g GoldenSyrup\n";
+        output = output + Integer.toString(eggs)+" Egg(s)\n";
+        output = output + Integer.toString(flour)+"g Flour\n";
+        output = output + Double.toString(Math.round(salt * 100.0) / 100.0) +" tsp Salt\n";
+        output = output + Double.toString(Math.round(bakingPowder * 100.0) / 100.0) +" tsp Baking Powder\n";
 
         TextView recipeTextView = findViewById(R.id.recipetextView);
         recipeTextView.setText(output);
