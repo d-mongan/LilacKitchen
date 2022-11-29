@@ -27,7 +27,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="218dp"
+        android:layout_marginStart="411dp"
         android:layout_marginTop="244dp"
         android:minEms="1"
         android:text="@string/Default0"
@@ -85,8 +85,8 @@
 
     <Button
         android:id="@+id/btnCreate"
-        android:layout_width="178dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="69dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="99dp"
         android:layout_marginTop="381dp"
