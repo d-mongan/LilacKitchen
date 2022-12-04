@@ -130,6 +130,7 @@ public class RecipeActivity extends AppCompatActivity {
         int numberOfPies = 10*batchNumber;
         int casterSugar = 100*batchNumber;
         int brownSugar = 100*batchNumber;
+        int flour = 225*batchNumber;
         int butter = 150*batchNumber;
         int eggs = 1*batchNumber;
         double vanillaExtract = 0.25*batchNumber;
@@ -147,6 +148,7 @@ public class RecipeActivity extends AppCompatActivity {
         output = output + Integer.toString(brownSugar)+"g Brown Sugar\n";
         output = output + Integer.toString(butter)+"g Butter\n";
         output = output + Integer.toString(eggs)+" Eggs\n";
+        output = output + Integer.toString(flour)+"g Flour\n";
         output = output + Double.toString(Math.round(vanillaExtract * 100.0) / 100.0) +" tsp Vanilla Extract\n";
         output = output + Double.toString(Math.round(bakingSoda * 100.0) / 100.0) +" tsp Baking Soda\n";
         output = output + Double.toString(Math.round(bakingPowder * 100.0) / 100.0) +" tsp Baking Powder\n";
@@ -380,13 +382,13 @@ public class RecipeActivity extends AppCompatActivity {
         //output to string
         String output = "";
         if(fourInch > 0){
-            output = output + "Four Inch " + flavour.toString() + " Cake x"+ Integer.toString(fourInch) +"\n";
+            output = output + "4 Inch " + flavour.toString() + " Cake x"+ Integer.toString(fourInch) +"\n390g 38m\n";
         }
         if(sixInch > 0){
-            output = output + "Six Inch " + flavour.toString() + " Cake x"+ Integer.toString(sixInch) +"\n";
+            output = output + "6 Inch " + flavour.toString() + " Cake x"+ Integer.toString(sixInch) +"\n570g 38m\n";
         }
         if(sevenInch > 0){
-            output = output + "Seven Inch " + flavour.toString() + " Cake x"+ Integer.toString(sevenInch) +"\n";
+            output = output + "7 Inch " + flavour.toString() + " Cake x"+ Integer.toString(sevenInch) +"\n760g 40m\n";
         }
         if(cuppies > 0){
             output = output + flavour.toString() + " Cupcakes x"+ Integer.toString(cuppies) +"\n";
@@ -501,13 +503,13 @@ public class RecipeActivity extends AppCompatActivity {
         /* output values in formatted string to textview */
         String output = "";
         if(fourInch > 0){
-            output = output + "Four Inch " + flavour.toString() + " Cake x"+ Integer.toString(fourInch) +"\n";
+            output = output + "4 Inch " + flavour.toString() + " Cake x"+ Integer.toString(fourInch) +"\n265g 30m\n";
         }
         if(sixInch > 0){
-            output = output + "Six Inch " + flavour.toString() + " Cake x"+ Integer.toString(sixInch) +"\n";
+            output = output + "6 Inch " + flavour.toString() + " Cake x"+ Integer.toString(sixInch) +"\n530g 30m\n";
         }
         if(sevenInch > 0){
-            output = output + "Seven Inch " + flavour.toString() + " Cake x"+ Integer.toString(sevenInch) +"\n";
+            output = output + "7 Inch " + flavour.toString() + " Cake x"+ Integer.toString(sevenInch) +"\n670g 35m\n";
         }
         if(cuppies > 0){
             output = output + flavour.toString() + " Cupcakes x"+ Integer.toString(cuppies) +"\n";
