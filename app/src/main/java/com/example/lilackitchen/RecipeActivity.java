@@ -111,7 +111,7 @@ public class RecipeActivity extends AppCompatActivity {
 
         String output = "";
         output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
-        output = output + "160\u00B0C Paddle Attachment\n6 Mins then flip\nRed rolling pin\nOrange cutter\n";
+        output = output + "160\u00B0C Paddle Attachment\n12 Mins\nRed rolling pin\nOrange cutter\n";
         output = output + "Makes " + Integer.toString(numOfCookies) + " Cookies\n";
 
         output = output + "\n"+Integer.toString(butter)+"g Butter\n";
@@ -270,7 +270,11 @@ public class RecipeActivity extends AppCompatActivity {
         output = output + "\n" + Integer.toString(casterSugar)+"g Caster Sugar\n";
         output = output + Integer.toString(cream)+"g Cream\n";
         output = output + Integer.toString(butter)+"g Butter\n\n";
-        output = output + "Add " + Integer.toString(salt)+"tsp Salt for Salted Caramel.";
+        output = output + "Add " + Integer.toString(salt)+"tsp Salt for Salted Caramel.\n";
+        output = output + "Heat sugar until dissolved, remove from heat\n";
+        output = output + "Heat cream for 2 minutes and add to sugar while whisking\n";
+        output = output + "Add butter and whisk\n";
+        output = output + "Add back on to a low heat if sugar is seizing\n";
 
         TextView recipeTextView = findViewById(R.id.recipetextView);
         recipeTextView.setText(output);
