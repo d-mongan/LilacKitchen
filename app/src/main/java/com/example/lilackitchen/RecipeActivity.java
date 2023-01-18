@@ -286,6 +286,117 @@ public class RecipeActivity extends AppCompatActivity {
     }
 
     private void createCarrotRecipe(int fourInch, int sixInch, int sevenInch, int cuppies, String flavour) {
+        //six inch is 2x 4 inch. 7 inch is 2.5 times 4 inch
+        int fourinflour = 200;
+        int fourineggs = 2;
+        int fourincanola = 83;
+        int fourincastersugar = 150;
+        int fourinbakingsoda = 10;
+        int fourincinnamon = 7;
+        int fourincarrot = 267;
+        int fourinpineapple = 113;
+        int fourinwalnuts = 67;
+
+        int cakeTflour = 0;
+        int cakeTeggs = 0;
+        int cakeTcanola = 0;
+        int cakeTcastersugar = 0;
+        int cakeTbakingsoda = 0;
+        int cakeTcinnamon = 0;
+        int cakeTcarrot = 0;
+        int cakeTpineapple = 0;
+        int cakeTwalnuts = 0;
+
+        if (fourInch > 0 ){
+            cakeTflour = cakeTflour + (fourinflour * fourInch);
+            cakeTeggs = cakeTeggs + (fourineggs * fourInch);
+            cakeTcanola = cakeTcanola + (fourincanola * fourInch);
+            cakeTcastersugar = cakeTcastersugar + (fourincastersugar * fourInch);
+            cakeTbakingsoda = cakeTbakingsoda + (fourinbakingsoda * fourInch);
+            cakeTcinnamon = cakeTcinnamon + (fourincinnamon * fourInch);
+            cakeTcarrot = cakeTcarrot + (fourincarrot * fourInch);
+            cakeTpineapple = cakeTpineapple + (fourinpineapple * fourInch);
+            cakeTwalnuts = cakeTwalnuts + (fourinwalnuts * fourInch);
+        }
+        if (sixInch > 0 ){
+            cakeTflour = cakeTflour + ((fourinflour*2) * sixInch);
+            cakeTeggs = cakeTeggs + ((fourineggs*2) * sixInch);
+            cakeTcanola = cakeTcanola + ((fourincanola*2) * sixInch);
+            cakeTcastersugar = cakeTcastersugar + ((fourincastersugar*2) * sixInch);
+            cakeTbakingsoda = cakeTbakingsoda + ((fourinbakingsoda*2) * sixInch);
+            cakeTcinnamon = cakeTcinnamon + ((fourincinnamon*2) * sixInch);
+            cakeTcarrot = cakeTcarrot + ((fourincarrot*2) * sixInch);
+            cakeTpineapple = cakeTpineapple + ((fourinpineapple*2) * sixInch);
+            cakeTwalnuts = cakeTwalnuts + ((fourinwalnuts*2) * sixInch);
+        }
+        if (sevenInch > 0 ){
+            cakeTflour = (int) (cakeTflour + ((fourinflour*2.5) * sevenInch));
+            cakeTeggs = (int) (cakeTeggs + ((fourineggs*2.5) * sevenInch));
+            cakeTcanola = (int) (cakeTcanola + ((fourincanola*2.5) * sevenInch));
+            cakeTcastersugar = (int) (cakeTcastersugar + ((fourincastersugar*2.5) * sevenInch));
+            cakeTbakingsoda = (int) (cakeTbakingsoda + ((fourinbakingsoda*2.5) * sevenInch));
+            cakeTcinnamon = (int) (cakeTcinnamon + ((fourincinnamon*2.5) * sevenInch));
+            cakeTcarrot = (int) (cakeTcarrot + ((fourincarrot*2.5) * sevenInch));
+            cakeTpineapple = (int) (cakeTpineapple + ((fourinpineapple*2.5) * sevenInch));
+            cakeTwalnuts = (int) (cakeTwalnuts + ((fourinwalnuts*2.5) * sevenInch));
+        }
+
+        //cupcakes
+        int sixflour = (int)((200 *2.5)/5);
+        int sixeggs = (int) ((2*2.5)/5);
+        int sixcanola = (int) ((83*2.5)/5);
+        int sixcastersugar = (int)((150*2.5)/5);
+        int sixbakingsoda = (int)((10*2.5)/5);
+        int sixcinnamon = (int)((7*2.5)/5);
+        int sixcarrot = (int)((267*2.5)/5);
+        int sixpineapple = (int)((113*2.5)/5);
+        int sixwalnuts = (int)((67*2.5)/5);
+        int cuppiemultiplier = cuppies/6;
+
+        if(cuppies > 0){
+            cakeTflour = cakeTflour + (sixflour * cuppiemultiplier);
+            cakeTeggs = cakeTeggs + (sixeggs * cuppiemultiplier);
+            cakeTcanola = cakeTcanola + (sixcanola * cuppiemultiplier);
+            cakeTcastersugar = cakeTcastersugar + (sixcastersugar * cuppiemultiplier);
+            cakeTbakingsoda = cakeTbakingsoda + (sixbakingsoda * cuppiemultiplier);
+            cakeTcinnamon = cakeTcinnamon + (sixcinnamon * cuppiemultiplier);
+            cakeTcarrot = cakeTcarrot + (sixcarrot * cuppiemultiplier);
+            cakeTpineapple = cakeTpineapple + (sixpineapple * cuppiemultiplier);
+            cakeTwalnuts = cakeTwalnuts + (sixwalnuts * cuppiemultiplier);
+        }
+        //output to string
+        String output = "";
+        if(fourInch > 0){
+            output = output + "4 Inch " + flavour.toString() + " Cake x"+ Integer.toString(fourInch) +"\n330g 38m\n";
+        }
+        if(sixInch > 0){
+            output = output + "6 Inch " + flavour.toString() + " Cake x"+ Integer.toString(sixInch) +"\n645g 46m\n";
+        }
+        if(sevenInch > 0){
+            output = output + "7 Inch " + flavour.toString() + " Cake x"+ Integer.toString(sevenInch) +"\n808g 46m\n";
+        }
+        if(cuppies > 0){
+            output = output + flavour.toString() + " Cupcakes x"+ Integer.toString(cuppies) +"\n";
+        }
+        if(fourInch > 0 || sixInch > 0 || sevenInch > 0){
+            output = output + "Oven Temp:180\u00B0C\n";
+        }
+        if (cuppies > 0 && fourInch == 0 && sixInch == 0 && sevenInch == 0){
+            output = output + "Oven Temp:160\u00B0C\n";
+        }
+        output = output + "\n"+Integer.toString(cakeTflour)+"g Flour\n";
+        output = output + Integer.toString(cakeTeggs)+" eggs\n";
+        output = output + Integer.toString(cakeTcanola)+"g Canola Oil\n";
+        output = output + Integer.toString(cakeTcastersugar)+"g Caster Sugar\n";
+        output = output + Integer.toString(cakeTbakingsoda)+"g Baking Soda\n";
+        output = output + Integer.toString(cakeTcinnamon)+"g Cinnamon\n";
+        output = output + Integer.toString(cakeTcarrot)+"g Carrot\n";
+        output = output + Integer.toString(cakeTpineapple)+"g Pineapple\n";
+        output = output + Integer.toString(cakeTwalnuts)+"g Walnuts\n";
+        output = output + "Whip eggs until light and fluffy\nAdd remaining ingredients and mix";
+
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
     }
 
     private void createChocolateRecipe(int fourInch, int sixInch, int sevenInch, int cuppies, String flavour) {
