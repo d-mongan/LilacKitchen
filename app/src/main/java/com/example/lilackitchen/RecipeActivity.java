@@ -71,10 +71,61 @@ public class RecipeActivity extends AppCompatActivity {
             createCookiePiesRecipe(batchNumber, flavour);
         }else if (Objects.equals(flavour, "Sugar Cookies")) {
             createSugarCookieRecipe(batchNumber, flavour);
+        } else if (Objects.equals(flavour, "Cookie Pie Filling")) {
+            createCookiePieFillingRecipe(batchNumber, flavour);
+        } else if (Objects.equals(flavour, "Cheesecake Filling")) {
+            createCheeseCakeFillingRecipe(batchNumber, flavour);
         }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+    }
+
+    private void createCheeseCakeFillingRecipe(int batchNumber, String flavour) {
+        int creamCheese = 500*batchNumber;
+        int casterSugar = 150*batchNumber;
+        int fillingNumber = 12*batchNumber;
+
+        //output to string
+        String output = "";
+        output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
+        output = output + "\n"+Integer.toString(creamCheese)+"g Cream Cheese\n";
+        output = output + Integer.toString(casterSugar)+"g Caster Sugar\n";
+
+        output = output + "\nAdd desired amount of flavouring to the mixture\nMakes " + Integer.toString(fillingNumber) + " cookie pie fillings";
+
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
+    }
+
+    private void createCookiePieFillingRecipe(int batchNumber, String flavour) {
+        int eggYolk = 1 * batchNumber;
+        int water = 80*batchNumber;
+        int casterSugar = 50*batchNumber;
+        int salt = 1 * batchNumber;
+        int butter = 7*batchNumber;
+        int cornflour = 10*batchNumber;
+        int flavouring = 30*batchNumber;
+        int fillingNumber = 6 * batchNumber;
+
+        //output to string
+        String output = "";
+        output = output + flavour + " " + Integer.toString(batchNumber) + " Batches\n";
+        output = output + "\n"+Integer.toString(eggYolk)+" Egg Yolks\n";
+        output = output + Integer.toString(water)+"g Water\n";
+        output = output + Integer.toString(casterSugar)+"g Caster Sugar\n";
+        output = output + Integer.toString(salt)+" Pinches of Salt\n";
+        output = output + Integer.toString(butter)+"g Butter\n";
+        output = output + Integer.toString(cornflour)+"g Cornflour\n";
+        output = output + Integer.toString(flavouring)+"g Flavouring\n";
+
+        output = output + "\nWhisk egg yolks and set aside\nAdd all other ingredients to a pot on medium heat";
+        output = output + "\nHeat until mixture thickens and large bubbles form";
+        output = output + "\nTurn down heat to low, take " + Integer.toString(batchNumber) + " tablespoons of the mixture and add it to the egg yolks";
+        output = output + "\nAdd the egg yolk mixture slowly to the pot while whisking";
+        output = output + "\n\n Makes " + Integer.toString(fillingNumber) + " cookie pie fillings";
+        TextView recipeTextView = findViewById(R.id.recipetextView);
+        recipeTextView.setText(output);
     }
 
 
@@ -92,7 +143,7 @@ public class RecipeActivity extends AppCompatActivity {
         output = output + Integer.toString(casterSugar)+"g Caster Sugar\n";
         output = output + Integer.toString(butter)+"g Butter\n";
         output = output + Integer.toString(vanillaExtract)+"tsp Vanilla Extract\n";
-        output = output + Double.toString(Math.round(vanillaBeanPaste * 100.0) / 100.0) +" tsp Vanilla Paste\n";
+        output = output + Double.toString(Math.round(vanillaBeanPaste * 100.0) / 100.0) +"tsp Vanilla Paste\n";
 
 
         TextView recipeTextView = findViewById(R.id.recipetextView);
