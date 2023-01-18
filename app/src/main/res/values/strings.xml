@@ -18,6 +18,8 @@
         <item>Berry Compote</item>
         <item>Caramel</item>
         <item>Custard</item>
+        <item>Cookie Pie Filling</item>
+        <item>Cheesecake Filling</item>
     </string-array>
     <string name="Default0">0</string>
     <string name="Cake">Cakes</string>
